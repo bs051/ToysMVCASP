@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ToysMVCASP.Models.ToyRel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Toy Rels</h1>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvailableQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToyObj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToyStoreObj)
+            </th>
+            <th><a class="btn btn-primary" asp-action="Create">Create New</a></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AvailableQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToyObj.ToyId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToyStoreObj.ToyStoreId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ToyRelId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ToyRelId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ToyRelId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

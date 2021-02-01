@@ -1,0 +1,42 @@
+﻿@model ToysMVCASP.Models.ToyRel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ToyRel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.InStock)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.InStock)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AvailableQuantity)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AvailableQuantity)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ToyObj)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ToyObj.ToyId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ToyStoreObj)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ToyStoreObj.ToyStoreId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ToyRelId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
