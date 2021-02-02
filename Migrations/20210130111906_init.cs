@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ToysMVCASP.Migrations
@@ -103,6 +104,10 @@ namespace ToysMVCASP.Migrations
                 name: "IX_ToyRel_ToyStoreId",
                 table: "ToyRel",
                 column: "ToyStoreId");
+
+            var sqlFile = Path.Combine(".\\Database", @"script.sql");
+
+            migrationBuilder.Sql(File.ReadAllText(sqlFile));
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
